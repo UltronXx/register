@@ -17,12 +17,12 @@ def main(page: Page) -> None:
     page.window.width = 1245
 
     page.fonts = {
-        "logo": "font/sky-medium.ttf",
-        # "regular": "font/sky-regular.ttf",
-        "regular": "font/MonaSans-Regular.ttf",
-        "semibold": "font/MonaSans-SemiBold.ttf",
-        "extrabold": "font/MonaSans-ExtraBold.ttf",
-        "bold": "font/MonaSans-Bold.ttf",
+        "medium": "font/sky-medium.ttf",
+        "regular": "font/sky-regular.ttf",
+        #"regular": "font/MonaSans-Regular.ttf",
+        #"semibold": "font/MonaSans-SemiBold.ttf",
+        #"extrabold": "font/MonaSans-ExtraBold.ttf",
+        #"bold": "font/MonaSans-Bold.ttf",
     }
 
     def route_change(e: RouteChangeEvent) -> None:

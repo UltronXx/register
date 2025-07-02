@@ -8,7 +8,8 @@ from flet import (
     FontWeight,
     Column,
     padding,
-    MainAxisAlignment
+    MainAxisAlignment,
+    CrossAxisAlignment
 )
 
 from shared.themes import *
@@ -19,7 +20,7 @@ def login(page: Page) -> View:
         route="/",
         bgcolor=green_shade_400,
         # padding=padding.symmetric(vertical=50, horizontal=100),
-        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+        horizontal_alignment=CrossAxisAlignment.CENTER,
         vertical_alignment=MainAxisAlignment.CENTER,
         controls=[
             Column(
@@ -28,7 +29,7 @@ def login(page: Page) -> View:
                         value="regista",
                         size=120,
                         weight=FontWeight.W_400,
-                        font_family="logo",
+                        font_family="medium",
                         color=white
                     ),
                     Container(
@@ -56,7 +57,7 @@ def login(page: Page) -> View:
                             Container(
                                 content=Text(
                                     value="Report a Problem",
-                                    font_family="semibold",
+                                    font_family="medium",
                                     color=white
                                 )
                             ),

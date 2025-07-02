@@ -65,7 +65,7 @@ def dashboard(page: Page) -> View:
                         controls=[
                             Text(
                                 value="34",
-                                font_family="semibold",
+                                font_family="medium",
                                 size=55,
                                 color=white,
                             ),
@@ -82,13 +82,6 @@ def dashboard(page: Page) -> View:
                     )
                 ]
             ),
-            # line
-            Container(
-                height=1,
-                bgcolor=lower_white,
-                width=600
-            ),
-            Column(height=15),
             # today is Monday, June 24, 2025
             Row(
                 controls=[
@@ -101,28 +94,39 @@ def dashboard(page: Page) -> View:
                     # Today
                     Text(
                         value="Monday",
-                        font_family="semibold",
+                        font_family="medium",
                         color=green_shade_200,
                         size=18
                     ),
                     # Date
                     Text(
                         value="June 24, 2025",
-                        font_family="semibold",
+                        font_family="medium",
                         color=white,
                         size=18
                     ),
                 ]
+            ),
+            Column(height=15),
+            # line
+            Container(
+                height=1,
+                bgcolor=lower_white,
+                width=600
             ),
             Column(height=25),
             # Cards [Clock card, activity logs, notifications, analytics]
             Row(
                 spacing=20,
                 controls=[
-                    CardButton(header="Clock Card", desc="Clock In or Out"),
-                    CardButton(header="Activity Logs", desc="Check your activity logs"),
-                    CardButton(header="Notifications", desc="Your alerts & reminders"),
-                    CardButton(header="Analytics", desc="Breakdown of working hours"),
+                    FolderButton(folder_name="Clock Card", on_click=lambda e: print()),
+                    FolderButton(folder_name="Activity Logs", on_click=lambda e: print()),
+                    FolderButton(folder_name="Notifications", on_click=lambda e: print()),
+                    FolderButton(folder_name="Analytics", on_click=lambda e: print()),
+                    # CardButton(header="Clock Card", desc="Clock In or Out"),
+                    # CardButton(header="Activity Logs", desc="Check your activity logs"),
+                    # CardButton(header="Notifications", desc="Your alerts & reminders"),
+                    # CardButton(header="Analytics", desc="Breakdown of working hours"),
                 ]
             ),
             Column(height=20),

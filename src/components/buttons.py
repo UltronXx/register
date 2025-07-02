@@ -39,7 +39,7 @@ class CustomTextField(CupertinoTextField):
       )
       
       self.text_style=TextStyle(
-          font_family="semibold",
+          font_family="regular",
           color=green_shade_400,
           size=14
       )
@@ -63,7 +63,7 @@ class CTAButton(Container):
       
       self.content=Text(
             value=self.text,
-            font_family="semibold",
+            font_family="regular",
             size=14,
             color=white
       )
@@ -91,7 +91,7 @@ class CardButton(Container):
             controls=[
                 Text(
                     value=self.header,
-                    font_family="semibold",
+                    font_family="medium",
                     size=14,
                     color=white
                 ),
@@ -116,7 +116,7 @@ class CardButton(Container):
 
         self.on_hover = self.animate_hover
 
-        # on hover
+    # on hover
     def animate_hover(self, e: ControlEvent) -> None:
         self.scale = 1.05 if self.scale == 1 else 1
         self.update()
@@ -132,5 +132,36 @@ class TextInfo(Row):
 
         self.controls = [
             Text(value=self.head, font_family="regular", color=white, size=14),
-            Text(value=self.tail, font_family="semibold", color=white, size=14),
+            Text(value=self.tail, font_family="medium", color=white, size=14),
         ]
+
+
+
+class FolderButton(Container):
+    def __init__(
+            self,
+            folder_name: Optional[str] = None,
+            on_click: Optional[Any] = None
+        ):
+        super().__init__(on_click=on_click)
+
+        self.folder_name = "Folder name" if folder_name is None else folder_name
+
+        self.content = Column(
+            controls=[
+                ft.Image(src="folder_icon.svg"),
+                Text(value=self.folder_name, color=white, font_family="regular")
+            ]
+        )
+
+        self.scale = 1
+        self.animate_scale = Animation(duration=100, curve=AnimationCurve.EASE_IN)
+
+        self.on_hover = self.animate_hover
+
+
+    # on hover
+    def animate_hover(self, e: ControlEvent) -> None:
+        self.scale = 1.05 if self.scale == 1 else 1
+        self.update()
+
